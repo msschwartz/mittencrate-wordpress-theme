@@ -1,0 +1,136 @@
+
+#shop-header {
+  background: url(../images/shop-bg.jpg) no-repeat center center;
+  background-size: cover;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.shop-box .bg-transparent-white {
+  padding: 40px 10px;
+  text-align: center;
+  max-width: 380px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.shop-box h3 {
+  margin-top: -4px;
+  margin-bottom: 0;
+}
+
+.shop-box hr {
+  margin: 15px auto;
+  width: 150px;
+}
+
+.shop-box .bg-transparent-white .sold-out-overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(../images/shop-sold-out.png) no-repeat center center;
+  background-size: contain;
+}
+@media (min-width: 800px) {
+  .shop-box .bg-transparent-white .sold-out-overlay {
+    background-size: auto;
+  }
+}
+
+.shop-box.sold-out .bg-transparent-white .sold-out-overlay {
+  display: block;
+}
+
+.shop-box .line-break {
+  display: none;
+}
+
+.shop-price {
+  line-height: 1;
+}
+
+.shop-price sup {
+  top: -11px;
+  font-size: 100%;
+}
+
+.shop-price .shop-price-dollars {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.shop-description {
+  font-size: 15px;
+  margin-top: 3px;
+  margin-bottom: 20px;
+}
+.shop-description-fine-print {
+  font-size: 15px;
+  margin-bottom: 20px;
+  font-style: italic; 
+}
+
+#shop-one-time-box {
+  margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .shop-box .line-break {
+    display: inline;
+  }
+  #shop-header {
+    padding-top: 125px;
+    padding-bottom: 125px;
+  }
+  .shop-box .bg-transparent-white {
+    padding: 30px;
+  }
+  .shop-box {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .shop-box {
+    width: 50%;
+  }
+  #shop-monthly-box {
+    float: left;
+  }
+  #shop-one-time-box {
+    float: right;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1056px) {
+  .shop-box .line-break {
+    display: none;
+  }
+  .shop-box .bg-transparent-white {
+    padding: 50px;
+    max-width: none;
+  }
+}
+
+
+
+#shop-content {
+  text-align: center;
+  padding: 70px 0;
+}
+#shop-content h3 {
+  margin-top: 0;
+}
+#shop-content .fa-circle {
+  font-size: 4px;
+  vertical-align: middle;
+}
+#shop-proudly-michigan {
+  margin-bottom: 30px;
+}
+#shop-proudly-michigan h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}

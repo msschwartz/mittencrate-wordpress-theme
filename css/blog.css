@@ -1,0 +1,148 @@
+
+#blog-header {
+  background: url(../images/blog-header-bg-m.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 168px 20px;
+  color: #fff;
+  font-family: 'Pacifico';
+  font-size: 50px;
+  line-height: 66px;
+  text-align: center;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+}
+@media (min-width: 768px) {
+  #blog-header {
+    background-image: url(../images/blog-header-bg.jpg);
+    font-size: 60px;
+    line-height: 72px;
+  }
+}
+
+#blog-tiles-container {
+  padding: 50px 20px 0 20px;
+}
+
+#blog-tiles:before,
+#blog-tiles:after {
+  display: table;
+  content: " ";
+}
+#blog-tiles:after {
+  clear: both;
+}
+
+#blog-loading {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: 50px;
+}
+
+
+.blog-tile {
+  background: #fff;
+  margin-bottom: 20px;
+}
+
+.blog-tile a.thumb {
+  display: block;
+  position: relative;
+  min-height: 140px;
+}
+.blog-tile a.thumb .eye-overlay {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5) url(../images/blog-tile-image-overlay.png) no-repeat center center;
+}
+.blog-tile a.thumb:hover .eye-overlay {
+  opacity: 1;
+}
+.blog-tile a.thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.blog-tile .title {
+  text-align: center;
+  font-size: 18px;
+  padding: 16px 20px;
+}
+.blog-tile .title a {
+  color: #444;
+}
+.blog-tile .title a:hover {
+  color: #237c8a;
+}
+.blog-tile .meta {
+  border-top: 1px solid #eee;
+  padding: 0 20px;
+  font-size: 12px;
+  line-height: 38px;
+}
+.blog-tile .meta .fa {
+  font-size: 14px;
+  margin-right: 8px;
+}
+.blog-tile .meta .views {
+  float: right;
+  text-align: right;
+  border-left: 1px solid #eee;
+}
+.blog-tile .meta .views .fa {
+  margin-left: 20px;
+}
+
+#blog-tiles-column-2,
+#blog-tiles-column-3,
+#blog-tiles-column-4,
+#blog-tiles-column-5 {
+  display: none;
+}
+
+@media (min-width: 516px) {
+  #blog-tiles {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  .blog-tile-column {
+    float: left;
+    width: 50%;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  #blog-tiles-column-2 {
+    display: block;
+  }
+}
+
+@media (min-width: 816px) {
+  .blog-tile-column {
+    width: 33.33333333%;
+  }
+  #blog-tiles-column-3 {
+    display: block;
+  }
+}
+
+@media (min-width: 1206px) {
+  .blog-tile-column {
+    width: 25%;
+  }
+  #blog-tiles-column-4 {
+    display: block;
+  }
+}
+
+@media (min-width: 1581px) {
+  .blog-tile-column {
+    width: 20%;
+  }
+  #blog-tiles-column-5 {
+    display: block;
+  }
+}

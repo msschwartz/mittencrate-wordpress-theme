@@ -1,0 +1,376 @@
+
+/**
+ * Home Page
+ * =============================================================================
+ */
+
+#home-page p {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+
+.home-section-title {
+  font-family: 'Montserrat';
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 36px;
+  line-height: 39px;
+  margin-top: -5px;
+  margin-bottom: 9px;
+}
+.home-top-bottom-padding {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+@media (min-width: 768px) {
+  .home-top-bottom-padding {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+
+.home-huge-cursive-title {
+  font-family: 'Pacifico';
+  font-size: 60px;
+  line-height: 72px;
+}
+
+#home-hero-excerpt,
+#home-hero-mobile-excerpt {
+  font-size: 28px;
+  line-height: 34px;
+  margin-bottom: 32px;
+}
+
+/* Mobile home page hero */
+#home-hero-mobile {
+  display: block;
+  text-align: center;
+  background-color: #fff;
+}
+@media (min-width: 992px) {
+  #home-hero-mobile {
+    display: none;
+  }
+}
+#home-hero-mobile-title {
+  display: block;
+  background: url(../images/home-hero-bg.jpg) no-repeat center right;
+  background-size: auto 120%;
+  padding: 140px 10px;
+  text-align: center;
+  color: #fff;
+}
+@media (min-width: 480px) {
+  #home-hero-mobile-title {
+    background-size: 200%;
+  }
+}
+
+/* Desktop home page hero */
+#home-hero {
+  display: none;
+  background: url(../images/home-hero-bg.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 128px 0;
+}
+@media (min-width: 992px) {
+  #home-hero {
+    display: block;
+  }
+}
+#home-hero-content {
+  width: 52%;
+  float: left;
+}
+#home-hero-title,
+#home-hero-excerpt {
+  text-align: center;
+  color: #fff;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+}
+#home-hero-title {
+  margin-bottom: 24px;
+  line-height: 1;
+}
+#home-hero-cta {
+  text-align: center;
+}
+
+
+#home-pitch {
+  background: url(../images/home-pitch-brick-bg.jpg) no-repeat bottom left;
+  position: relative;
+}
+#home-pitch-mobile-products-img {
+  display: block;
+  width: 92%;
+  height: auto; 
+}
+@media (min-width: 800px) {
+  #home-pitch-mobile-products-img {
+    display: none;
+  }
+  #home-pitch-content {
+    float: right;
+    width: 48%;
+  }
+  #home-pitch-inner {
+    background: url(../images/home-pitch-products-bg.png) no-repeat bottom left;
+    padding-bottom: 0;
+    background-size: 55% auto;
+  }
+  #home-pitch-inner .home-top-bottom-padding {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+@media (min-width: 1260px) {
+  #home-pitch-content {
+    float: right;
+    width: 440px;
+  }
+  #home-pitch-inner {
+    background-size: 736px auto;
+  }
+  #home-pitch-inner .home-top-bottom-padding {
+    padding-top: 128px;
+    padding-bottom: 106px;
+  }
+}
+
+#home-pitch .brown-arrow-down {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -20px;
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #d78a4c;
+}
+
+
+#home-seen-on {
+  padding: 38px 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#home-seen-on .logo-slide {
+  height: 40px;
+}
+#home-seen-on img {
+  height: 100%;
+  width: auto;
+  margin: 0 auto;
+}
+
+
+.how-it-works-item {
+  text-align: center;
+  margin-top: 42px;
+}
+.how-it-works-item:first-child {
+  margin-top: 0;
+}
+#home-how-it-works .home-section-title {
+  margin-bottom: 48px;
+}
+#home-how-it-works .how-it-works-item .home-section-title {
+  font-size: 30px;
+  margin-top: 12px;
+  margin-bottom: 3px;
+}
+
+#home-how-it-works .how-it-works-item img {
+  width: 167px;
+}
+#home-how-it-works .how-it-works-item p {
+  margin-bottom: 0;
+}
+#home-how-it-works hr {
+  margin: 40px auto;
+}
+@media (min-width: 800px) {
+  .how-it-works-item {
+    width: 26%;
+    margin-top: 0;
+  }
+  .how-it-works-item-left {
+    float: left;
+  }
+  .how-it-works-item-center {
+    float: left;
+    margin-left: 11%;
+  }
+  .how-it-works-item-right {
+    float: right;
+  }
+  #home-how-it-works hr {
+    width: 50%;
+  }
+}
+
+
+#home-gleaners {
+  background: #fff;
+}
+
+#home-gleaners-link img {
+  width: 100%;
+  height: auto;
+}
+#home-gleaners-link img.normal {
+  display: block;
+}
+#home-gleaners-link img.hover {
+  display: none;
+}
+#home-gleaners-link:hover img.normal {
+  display: none;
+}
+#home-gleaners-link:hover img.hover {
+  display: block;
+}
+#home-gleaners-content {
+  
+}
+#home-gleaners-link {
+  display: none;
+}
+@media (min-width: 520px) {
+  #home-gleaners-content {
+    float: left;
+    width: 73%;
+    padding-right: 50px;
+  }
+  #home-gleaners-link {
+    display: block;
+    float: right;
+    width: 27%;;
+    max-width: 236px;
+    margin-top: 50px;
+  }
+}
+@media (min-width: 768px) {
+  #home-gleaners-content {
+    float: left;
+    width: 75%;
+    padding-right: 20px;
+  }
+  #home-gleaners-link {
+    float: right;
+    width: 25%;;
+    max-width: 236px;
+    margin-top: 0;
+  }
+}
+
+
+
+/* Meet the founders */
+#home-meet-founders {
+  position: relative;
+}
+#home-meet-founders img,
+#home-meet-founders-mobile img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+#home-meet-founders-content {
+  text-align: center;
+}
+#home-meet-founders-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+}
+#home-meet-founders-content .container,
+#home-meet-founders-content table {
+  height: 100%;
+}
+#home-meet-founders-content table {
+  float: right;
+  width: 50%;
+}
+#home-meet-founders .home-huge-cursive-title {
+  white-space: nowrap;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+#home-meet-founders-mobile {
+  text-align: center;
+}
+#home-meet-founders-mobile .home-huge-cursive-title {
+  color: #237c8a;
+  font-size: 48px;
+  line-height: 52px;
+  margin-bottom: 5px;
+}
+@media (min-width: 520px) {
+  #home-meet-founders-mobile .home-huge-cursive-title {
+    font-size: 60px;
+    line-height: 66px;
+  }
+}
+
+#home-meet-founders-mobile {
+  display: block;
+}
+#home-meet-founders {
+  display: none;
+}
+@media (min-width: 960px) {
+  #home-meet-founders-mobile {
+    display: none;
+  }
+  #home-meet-founders {
+    display: block;
+  }
+}
+
+
+
+
+
+#home-subscribe {
+  background: url(../images/home-subscribe-bg.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 174px 0;
+}
+
+
+
+.home-bar {
+  text-align: center;
+  font-weight: 300;
+  color: #fff;
+  padding: 30px 10px;
+  font-size: 30px;
+  line-height: 1.2;
+}
+.home-bar-brown {
+  background-color: #d78a4c;
+}
+.home-bar-blue {
+  background-color: #237c8a;
+}
+@media (min-width: 1056px) {
+  .home-bar {
+    padding: 35px 10px;
+  }
+}
+
+.home-bar-brown a {
+  color: #fff;
+}
+.home-bar-brown a:hover {
+  color: #eee;
+}
