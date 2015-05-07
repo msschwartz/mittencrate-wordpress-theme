@@ -297,11 +297,16 @@ function show_estimated_ship_date_new_subscription_orders_email( $order ) {
 add_action( 'woocommerce_email_after_order_table', 'show_estimated_ship_date_new_subscription_orders_email' );
 
 
-// show next subscription ship date under subscriptions section on my account page
-// function show_next_ship_date_under_my_account_subscriptions( $order_id ) {
-//   echo '<p class="alert"><em>The next round of subscription shipments is scheduled for <strong>' . next_subscription_ship_date() . '</strong></em>.</p>';
-// }
-// add_action( 'woocommerce_before_my_account', 'show_next_ship_date_under_my_account_subscriptions', 11 );
+// show next subscription ship date on view order page (for subscriptions)
+function show_estimated_ship_date_under_view_order_for_subscriptions( $order_id ) {
+  $order = wc_get_order( $order_id );
+  $item = array_pop( $order->get_items() );
+  if ( $order->status == 'processing' && $item['name'] != 'Try or Gift' ) {
+    echo '<h2>Estimated Shipment Date</h2>';
+    echo '<p>Your package ships by: <strong>' . new_orders_next_subscription_ship_date( $order->order_date ) . '</strong>.</p>';
+  }
+}
+add_action( 'woocommerce_view_order', 'show_estimated_ship_date_under_view_order_for_subscriptions' );
 
 
 // next subscription shipment date string
