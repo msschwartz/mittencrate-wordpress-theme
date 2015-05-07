@@ -1,7 +1,7 @@
 /* 
 Theme Name: Mitten Crate - 2014
 Description: 
-Version: 1.9
+Version: 1.10
 */
 
 
@@ -881,9 +881,13 @@ hr {
 }
 
 /* button overrides */
-/*.page .woocommerce #content input.button, 
+.page .woocommerce a.button.alt, 
+.page .woocommerce button.button.alt, 
+.page .woocommerce input.button.alt,
+.page .woocommerce #respond input#submit.alt,
+.page .woocommerce #content input.button, 
 .page .woocommerce #respond input#submit, 
-.page .woocommerce a.button, 
+.page .woocommerce a.button,
 .page .woocommerce button.button, 
 .page .woocommerce input.button, 
 .page.woocommerce-page #content input.button, 
@@ -893,7 +897,6 @@ hr {
 .page.woocommerce-page input.button {
   display: inline-block;
   font-family: 'Montserrat';
-  line-height: 1;
   text-decoration: none;
   text-transform: uppercase;
   vertical-align: middle;
@@ -904,13 +907,19 @@ hr {
   font-weight: normal;
   -webkit-border-radius: 0;
   border-radius: 0;
+  padding: .49em 1em;
   text-shadow: none;
   white-space: normal;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-}*/
-/*.page .woocommerce #content input.button:hover, 
+  box-sizing: border-box;
+}
+.page .woocommerce a.button.alt:hover, 
+.page .woocommerce button.button.alt:hover, 
+.page .woocommerce input.button.alt:hover,
+.page .woocommerce #respond input#submit.alt:hover,
+.page .woocommerce #content input.button:hover, 
 .page .woocommerce #respond input#submit:hover, 
 .page .woocommerce a.button:hover, 
 .page .woocommerce button.button:hover, 
@@ -923,18 +932,19 @@ hr {
   color: #fff;
   background: #237c8a;
   top: 0;
-}*/
+}
 
 
 /* Notice alert color */
-/*.page .woocommerce .woocommerce-info, 
+.page .woocommerce .woocommerce-info, 
 .page.woocommerce-page .woocommerce-info {
-  border-color: #237c8a;
+  border-top-color: #237c8a;
 }
-.page .woocommerce .woocommerce-info:before, 
+.page .woocommerce .woocommerce-info:before,
 .page.woocommerce-page .woocommerce-info:before {
-  background-color: #237c8a;
-}*/
+  color: #237c8a;
+}
+
 
 
 
