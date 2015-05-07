@@ -278,26 +278,30 @@ add_filter( 'woocommerce_can_subscription_be_renewed', 'mc_do_not_allow_3_month_
 
 
 
+// global additions to ALL email footers
 function mc_email_footer() {
-  echo '<p>You can check the status of your orders by logging in to <a href="' . home_url('/my-account/') . '">your account</a>.</p>';
-  echo '<p>If you have any questions please check our <a href="' . home_url('/faq/') . '">FAQ page</a>.</p>';
+  echo '<hr />';
+  echo '<div>The next round of subscription shipments is scheduled for <strong>' . next_subscription_ship_date() . '</strong>.</div>';
+  echo '<hr />';
+  echo '<div>You can check the status of your orders by logging in to <a href="' . home_url('/my-account/') . '">your account</a>.</div>';
+  echo '<div>If you have any questions please check our <a href="' . home_url('/faq/') . '">FAQ page</a>.</div>';
 }
 add_action( 'woocommerce_email_footer', 'mc_email_footer', 9 );
 
 
-// show "Ships By" section for subscription orders
-function mc_email_after_order_table( $order ) {
-  
+// show next subscription ship date under subscriptions section on my account page
+function show_next_ship_date_under_my_account_subscriptions( $order_id ) {
+  echo '<p class="alert"><em>The next round of subscription shipments is scheduled for <strong>' . next_subscription_ship_date() . '</strong></em>.</p>';
+}
+add_action( 'woocommerce_before_my_account', 'show_next_ship_date_under_my_account_subscriptions', 11 );
+
+
+// next subscription shipment date string
+function next_subscription_ship_date() {
   $ship_date = new DateTime();
   $day = intval( $ship_date->format('d') );
   if ($day > 1) {
     $ship_date->add( new DateInterval('P1M') );
   }
-  
-  $item = array_pop( $order->get_items() );
-  if ( $order->status == 'processing' && $item['name'] != 'Try or Gift' ) {
-    echo '<h2>Estimated Shipment Date</h2>';
-    echo '<p>Your package ships by: <strong>' . $ship_date->format('F') . ' 15th</strong>.</p>';
-  }
+  return $ship_date->format('F') . ' 15th';
 }
-add_action( 'woocommerce_email_after_order_table', 'mc_email_after_order_table' );

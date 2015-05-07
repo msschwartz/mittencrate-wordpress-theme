@@ -670,6 +670,11 @@ hr {
   padding-top: 10px;
 }
 
+.alert {
+  padding: 10px;
+  border: 1px solid #faebcc;
+  background: #fcf8e3;
+}
 
 
 
