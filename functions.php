@@ -258,3 +258,46 @@ function mc_do_not_allow_3_month_renewals( $subscription_can_be_renewed, $subscr
   }
 }
 add_filter( 'woocommerce_can_subscription_be_renewed', 'mc_do_not_allow_3_month_renewals', 100, 4);
+
+
+
+/**
+ * Use SMTP for sending emails
+ */
+// function mc_phpmailer_setup( $phpmailer ) {
+//   error_log('mc_phpmailer_setup');
+//   $phpmailer->isSMTP();
+//   $phpmailer->Encoding = 'base64';
+//   $phpmailer->Host = PHPMAILER_Host;
+//   $phpmailer->Port = PHPMAILER_Port;
+//   $phpmailer->SMTPAuth = PHPMAILER_SMTPAuth;
+//   $phpmailer->Username = PHPMAILER_Username;
+//   $phpmailer->Password = PHPMAILER_Password;
+// }
+// add_action( 'phpmailer_init', 'mc_phpmailer_setup' );
+
+
+
+function mc_email_footer() {
+  echo '<p>You can check the status of your orders by logging in to <a href="' . home_url('/my-account/') . '">your account</a>.</p>';
+  echo '<p>If you have any questions please check our <a href="' . home_url('/faq/') . '">FAQ page</a>.</p>';
+}
+add_action( 'woocommerce_email_footer', 'mc_email_footer', 9 );
+
+
+// show "Ships By" section for subscription orders
+function mc_email_after_order_table( $order ) {
+  
+  $ship_date = new DateTime();
+  $day = intval( $ship_date->format('d') );
+  if ($day > 1) {
+    $ship_date->add( new DateInterval('P1M') );
+  }
+  
+  $item = array_pop( $order->get_items() );
+  if ( $order->status == 'processing' && $item['name'] != 'Try or Gift' ) {
+    echo '<h2>Estimated Shipment Date</h2>';
+    echo '<p>Your package ships by: <strong>' . $ship_date->format('F') . ' 15th</strong>.</p>';
+  }
+}
+add_action( 'woocommerce_email_after_order_table', 'mc_email_after_order_table' );
