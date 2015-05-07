@@ -7,8 +7,8 @@
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
   
-  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="<?php echo home_url( '/' ); ?>favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="<?php echo home_url( '/' ); ?>favicon-16x16.png" sizes="16x16" />
   
   <?php wp_head(); ?>
 </head>
