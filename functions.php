@@ -291,7 +291,7 @@ function show_estimated_ship_date_new_subscription_orders_email( $order ) {
   $item = array_pop( $order->get_items() );
   if ( $order->status == 'processing' && $item['name'] != 'Try or Gift' ) {
     echo '<h2>Estimated Shipment Date</h2>';
-    echo '<p>Your package ships by: <strong>' . new_orders_next_subscription_ship_date() . '</strong>.</p>';
+    echo '<p>Your package ships by: <strong>' . new_orders_next_subscription_ship_date( $order->order_date ) . '</strong>.</p>';
   }
 }
 add_action( 'woocommerce_email_after_order_table', 'show_estimated_ship_date_new_subscription_orders_email' );
@@ -305,11 +305,11 @@ add_action( 'woocommerce_email_after_order_table', 'show_estimated_ship_date_new
 
 
 // next subscription shipment date string
-function new_orders_next_subscription_ship_date() {
-  $ship_date = new DateTime();
-  $day = intval( $ship_date->format('d') );
+function new_orders_next_subscription_ship_date( $order_date ) {
+  $date = new DateTime( $order_date );
+  $day = intval( $date->format('d') );
   if ($day > 1) {
-    $ship_date->add( new DateInterval('P1M') );
+    $date->add( new DateInterval('P1M') );
   }
-  return $ship_date->format('F') . ' 15th';
+  return $date->format('F') . ' 15th';
 }
