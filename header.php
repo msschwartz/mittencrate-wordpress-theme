@@ -11,6 +11,26 @@
   <link rel="icon" type="image/png" href="<?php echo home_url( '/' ); ?>favicon-16x16.png" sizes="16x16" />
   
   <?php wp_head(); ?>
+  
+  <!-- Facebook Remarketing Pixel -->
+  <script>
+    (function() {
+      var _fbq = window._fbq || (window._fbq = []);
+      if (!_fbq.loaded) {
+        var fbds = document.createElement('script');
+        fbds.async = true;
+        fbds.src = '//connect.facebook.net/en_US/fbds.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(fbds, s);
+        _fbq.loaded = true;
+      }
+      _fbq.push(['addPixelId', '819002998153413']);
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', 'PixelInitialized', {}]);
+  </script>
+  <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=819002998153413&amp;ev=PixelInitialized" /></noscript>
+  
 </head>
 
 <body <?php body_class(); ?>>
