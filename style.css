@@ -1,7 +1,7 @@
 /* 
 Theme Name: Mitten Crate - 2014
 Description: 
-Version: 1.11
+Version: 1.12
 */
 
 
@@ -55,10 +55,11 @@ body {
 
 a {
   text-decoration: none;
-  color: #444;
+  color: #1a0dab;
 }
 a:hover {
-  color: #237c8a;
+  text-decoration: underline;
+  color: #1a0dab;
 }
 
 h1 {
