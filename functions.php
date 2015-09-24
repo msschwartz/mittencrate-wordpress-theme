@@ -259,6 +259,22 @@ function mc_do_not_allow_3_month_renewals( $subscription_can_be_renewed, $subscr
 }
 add_filter( 'woocommerce_can_subscription_be_renewed', 'mc_do_not_allow_3_month_renewals', 100, 4);
 
+/**
+ * Do not allow 3-month subscriptions to be cancelled.
+ */
+function mc_do_not_allow_3_month_cancellations( $actions, $subscriptions ) {
+  
+  foreach( $subscriptions as $subscription_key => $subscription_details ) {
+    
+    if( $subscription_details['product_id'] == 3622 ) {
+      
+      unset( $actions[$subscription_key]['cancel'] );
+    }
+  }
+  
+  return $actions;
+}
+add_filter( 'woocommerce_my_account_my_subscriptions_actions', 'mc_do_not_allow_3_month_cancellations', 100, 2 );
 
 
 /**
