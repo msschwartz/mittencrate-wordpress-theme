@@ -311,10 +311,18 @@ add_action( 'woocommerce_view_order', 'show_estimated_ship_date_under_view_order
 
 // next subscription shipment date string
 function new_orders_next_subscription_ship_date( $order_date ) {
+  $cal_info = cal_info(0);
+  $month_names = $cal_info['months'];
+  
   $date = new DateTime( $order_date );
+  
   $day = intval( $date->format('d') );
-  if ($day > 1) {
-    $date->add( new DateInterval('P1M') );
+  $month = intval( $date->format('m') );
+  
+  // if after the 1st, it ships next month
+  if ( $day > 1 ) {
+    $month = ($month % 12) + 1;
   }
-  return $date->format('F') . ' 15th';
+  
+  return $month_names[$month] . ' 15th';
 }
